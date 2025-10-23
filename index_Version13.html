@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Growth Campaigns - Conversion Copywriter for AI Tech Companies</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;900&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #6a4dfc;
+      --accent: #4527a0;
+      --green: #25D366;
+      --white: #fff;
+      --light: #f7f7fb;
+      --gray: #ececf5;
+      --dark: #222;
+      --footer: #24233b;
+      --radius: 24px;
+      --shadow: 0 6px 24px rgba(106,77,252,0.10);
+      --space: 34px;
+      --card-gradient: linear-gradient(120deg, #f4f6ff 0%, #ececf5 100%);
+      --hero-gradient: linear-gradient(120deg, var(--primary) 0%, var(--accent) 100%);
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', 'Manrope', Arial, sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.72;
+      font-size: 1.07rem;
+      letter-spacing: 0.01em;
+    }
+    * { box-sizing: border-box; }
+    a { color: var(--primary); text-decoration: underline; font-weight: 600; transition: color .2s;}
+    a:hover { color: var(--accent); }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 var(--space);
+    }
+    section { padding: 70px 0; }
+    @media (max-width: 700px) {
+      section { padding: 40px 0; }
+      .container { padding: 0 16px; }
+    }
+    .section-title {
+      font-family: 'Manrope',sans-serif;
+      font-size: 2.35rem;
+      font-weight: 900;
+      text-align: center;
+      margin-bottom: 10px;
+      color: var(--accent);
+      letter-spacing: -1px;
+    }
+    .section-subtitle {
+      font-size: 1.19rem;
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: var(--space);
+      font-family: 'Inter',sans-serif;
+      opacity: .95;
+    }
+    /* HERO */
+    .hero {
+      background: var(--hero-gradient);
+      color: var(--white);
+      border-radius: 0 0 var(--radius) var(--radius);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      min-height: 410px;
+      display: flex;
+      align-items: center;
+    }
+    .hero-svg-bg {
+      position: absolute;
+      top: -70px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120%;
+      height: 320px;
+      z-index: 0;
+      opacity: 0.18;
+      pointer-events: none;
+    }
+    .hero-flex {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 350px;
+      width: 100%;
+    }
+    .hero-content-col {
+      flex:1 1 400px;
+      max-width:560px;
+      min-width:280px;
+      z-index:2;
+      padding-top:50px;
+      padding-bottom:50px;
+    }
+    .hero-content-col h1 {
+      font-family:'Manrope',sans-serif;
+      font-size:3.1rem;
+      font-weight:900;
+      letter-spacing:-2px;
+      color:#fff;
+      line-height:1.08;
+      margin-bottom:17px;
+      text-align:left;
+      text-shadow:0 4px 38px rgba(106,77,252,0.18);
+    }
+    .hero-content-col .tagline {
+      font-family:'Manrope',sans-serif;
+      font-size:1.45rem;
+      font-weight:800;
+      color:#e2e2ff;
+      margin-bottom:27px;
+      text-align:left;
+      letter-spacing:-1px;
+    }
+    .hero-content-col ul {
+      font-size:1.19rem;
+      color:#f3f3ff;
+      margin-bottom:0;
+      list-style:none;
+      padding:0;
+      text-align:left;
+      margin-left:0;
+    }
+    .hero-content-col ul li {
+      margin-bottom:20px;
+      line-height:1.7;
+      font-size:1.13rem;
+      font-weight:500;
+      letter-spacing:0.01em;
+    }
+    .hero-content-col ul li:last-child { margin-bottom:0; }
+    .hero-content-col .whatsapp-link {
+      font-size:1.18rem;
+      font-weight:800;
+      color:var(--green);
+      text-decoration:underline;
+      margin-top:34px;
+      display:inline-block;
+      transition:color .2s;
+      background:none;
+      border:none;
+      padding:0;
+      cursor:pointer;
+    }
+    .hero-content-col .whatsapp-link:hover { color:#1ea653;}
+    .hero-svg-col {
+      flex:1 1 260px;
+      max-width:350px;
+      min-width:200px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      z-index:1;
+      padding-top:20px;
+      padding-bottom:20px;
+    }
+    @media (max-width:900px) {
+      .hero-flex { flex-direction:column; gap:0;}
+      .hero-content-col,.hero-svg-col { max-width:100%; }
+      .hero { min-height:0; }
+    }
+    @media (max-width:600px) {
+      .hero-content-col h1 { font-size:2.1rem; }
+      .hero-content-col .tagline { font-size:1.13rem; }
+      .hero-svg-col { padding-top:10px; padding-bottom:10px;}
+    }
+    /* SERVICES */
+    .services {
+      background: var(--white);
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: var(--space);
+      margin-bottom: var(--space);
+    }
+    .service-card {
+      background: var(--card-gradient);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 38px 26px 30px 26px;
+      min-height: 270px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      border: 1px solid #ececf5;
+      position: relative;
+      transition: box-shadow 0.16s;
+    }
+    .service-card:hover { box-shadow: 0 10px 38px rgba(106,77,252,0.13);}
+    .service-card h3 {
+      font-family: 'Manrope', sans-serif;
+      font-size: 1.38rem;
+      color: var(--primary);
+      font-weight: 800;
+      margin-bottom: 7px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+    .service-card p { margin-bottom: 0; color: #333;}
+    .pricing-tiers {
+      margin-top: 10px;
+      font-size: 1rem;
+      margin-bottom: 0;
+    }
+    .pricing-tier {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 7px 0;
+      border-bottom: 1px solid #e7e4f6;
+    }
+    .tier-name { font-weight: 600; color: #363366;}
+    .tier-price { color: var(--accent); font-weight: 800; }
+    .service-emoji { font-size: 1.35rem; }
+    .info-boxes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: var(--space);
+      margin-top: var(--space);
+    }
+    .info-box {
+      background: #f4f6ff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 29px 22px;
+      font-size: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border-left: 6px solid var(--primary);
+    }
+    .info-box h4 { margin-bottom: 8px; color: var(--primary); font-weight: 800;}
+    /* PORTFOLIO */
+    .portfolio {
+      background: var(--gray);
+    }
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space);
+    }
+    .portfolio-item {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px 20px 24px 20px;
+      position: relative;
+      min-height: 140px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .portfolio-number {
+      position: absolute;
+      top: -22px;
+      left: 18px;
+      background: var(--primary);
+      color: var(--white);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1.17rem;
+      border: 3px solid var(--white);
+      box-shadow: 0 2px 10px rgba(106,77,252,.11);
+      font-family: 'Manrope',sans-serif;
+    }
+    .view-sample {
+      color: var(--primary);
+      text-decoration: underline;
+      font-weight: 700;
+      font-size: 1.09rem;
+      margin-top: 6px;
+    }
+    /* WHAT'S INCLUDED */
+    .included-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: var(--space);
+      margin-bottom: var(--space);
+    }
+    .included-item {
+      background: #f4f6ff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      text-align: center;
+      padding: 27px 16px;
+      font-size: 1.09rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      min-height: 130px;
+      border: 1px solid #ececf5;
+    }
+    .included-emoji { font-size: 2rem; margin-bottom: 10px;}
+    .included-item h4 { font-family: 'Manrope',sans-serif; font-weight: 700; font-size: 1.13rem;}
+    .featured-item {
+      background: linear-gradient(120deg, var(--primary) 0%, var(--accent) 100%);
+      color: var(--white);
+      text-align: center;
+      font-size: 1.23rem;
+      font-family: 'Manrope',sans-serif;
+      font-weight: 800;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 38px 22px;
+      margin: 0 auto;
+      max-width: 420px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #ececf5;
+    }
+    .featured-item .included-emoji { font-size: 2.2rem; }
+    /* HOW IT WORKS */
+    .how-it-works {
+      background: var(--gray);
+    }
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: var(--space);
+      margin-bottom: var(--space);
+    }
+    .process-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 27px 18px;
+      text-align: center;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 140px;
+      border: 1px solid #ececf5;
+    }
+    .process-number {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--primary);
+      color: var(--white);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.23rem;
+      border: 3px solid var(--white);
+      box-shadow: 0 2px 10px rgba(106,77,252,.12);
+      font-family: 'Manrope',sans-serif;
+    }
+    .process-card h4 { margin-top: 24px; margin-bottom: 10px; font-family: 'Manrope',sans-serif; font-size: 1.18rem;}
+    .launch-message {
+      text-align: center;
+      background: linear-gradient(120deg, var(--primary) 0%, var(--accent) 100%);
+      color: var(--white);
+      font-size: 1.19rem;
+      font-weight: 800;
+      padding: 22px 0;
+      border-radius: var(--radius);
+      margin: 0 auto;
+      max-width: 400px;
+      box-shadow: var(--shadow);
+      font-family: 'Manrope',sans-serif;
+      border: 1px solid #ececf5;
+    }
+    /* CONTACT */
+    .contact {
+      background: var(--hero-gradient);
+      color: var(--white);
+      text-align: center;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .contact h2 { font-size: 2.12rem; font-family: 'Manrope',sans-serif; font-weight: 900;}
+    .contact-info { margin-bottom: 19px;}
+    .whatsapp-link {
+      color: var(--green);
+      font-weight: 800;
+      font-size: 1.18rem;
+      text-decoration: underline;
+      margin-bottom: 8px;
+      margin-top: 8px;
+      display: inline-block;
+      transition: color .2s;
+    }
+    .whatsapp-link:hover { color: #1ea653;}
+    /* FAQ */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space);
+    }
+    .faq-item {
+      background: #f4f6ff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 23px 19px;
+      min-height: 115px;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      font-size: 1.09rem;
+      border: 1px solid #ececf5;
+    }
+    .faq-icon { font-size: 1.35rem; margin-bottom: 7px;}
+    .faq-item h4 { font-family: 'Manrope',sans-serif; font-size: 1.11rem; font-weight: 800; margin-bottom: 6px;}
+    .footer {
+      background: var(--footer);
+      color: var(--white);
+      text-align: center;
+      font-size: 1rem;
+      padding: 34px 0;
+      border-radius: var(--radius);
+      margin-top: var(--space);
+    }
+    .footer p { margin: 0; opacity: .83;}
+    @media (max-width: 900px) {
+      .services-grid,
+      .portfolio-grid,
+      .included-grid,
+      .process-grid,
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <svg class="hero-svg-bg" width="100%" height="320" viewBox="0 0 1200 320" fill="none">
+        <path fill="#fff" fill-opacity="0.07" d="M0,96L80,122.7C160,149,320,203,480,208C640,213,800,171,960,181.3C1120,192,1280,256,1360,288L1440,320L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
+      </svg>
+      <div class="container">
+        <div class="hero-flex">
+          <div class="hero-content-col">
+            <h1>Growth Campaigns</h1>
+            <div class="tagline">Conversion Copywriter for AI Tech Companies</div>
+            <ul>
+              <li>🚀 High-converting copy and strategy for international AI tech companies</li>
+              <li>🤝 Persuasion, technical expertise, and implementation guidance</li>
+              <li>🎯 Turn complex solutions into clear, actionable messaging</li>
+              <li>🌏 Target: B2B SaaS, AI platforms, automation tools (US, EU, UK, global)</li>
+            </ul>
+            <a href="https://wa.me/9288117726" class="whatsapp-link">💬 Message on Business WhatsApp</a>
+          </div>
+          <div class="hero-svg-col">
+            <svg width="240" height="240" viewBox="0 0 240 240" fill="none">
+              <circle cx="120" cy="120" r="110" fill="#fff" opacity="0.08"/>
+              <ellipse cx="120" cy="140" rx="90" ry="50" fill="#6a4dfc" opacity="0.15"/>
+              <rect x="70" y="60" width="100" height="120" rx="24" fill="#fff" opacity="0.18"/>
+              <rect x="95" y="95" width="50" height="14" rx="7" fill="#4527a0" opacity="0.56"/>
+              <rect x="95" y="118" width="35" height="10" rx="5" fill="#6a4dfc" opacity="0.34"/>
+              <rect x="95" y="138" width="28" height="8" rx="4" fill="#4527a0" opacity="0.24"/>
+              <rect x="95" y="154" width="34" height="8" rx="4" fill="#ececf5" opacity="0.16"/>
+              <circle cx="150" cy="190" r="11" fill="#4527a0" opacity="0.28"/>
+              <circle cx="90" cy="190" r="7" fill="#6a4dfc" opacity="0.28"/>
+              <circle cx="120" cy="190" r="7" fill="#25D366" opacity="0.28"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES & PRICING -->
+    <section class="services">
+      <div class="container">
+        <div class="section-title">Services &amp; Pricing</div>
+        <div class="section-subtitle">Professional copywriting services with complete strategy and implementation guidance</div>
+        <div class="services-grid">
+          <div class="service-card">
+            <h3><span class="service-emoji">🎯</span> Landing Pages</h3>
+            <p>Lead generation pages optimized for AI tech audiences</p>
+            <div class="pricing-tiers">
+              <div class="pricing-tier"><span class="tier-name">3-5 sections</span> <span class="tier-price">$1,000</span></div>
+              <div class="pricing-tier"><span class="tier-name">6-8 sections</span> <span class="tier-price">$1,800</span></div>
+              <div class="pricing-tier"><span class="tier-name">9-11+ sections</span> <span class="tier-price">$2,800+</span></div>
+              <div class="pricing-tier"><span class="tier-name">A/B Testing</span> <span class="tier-price">+$800</span></div>
+            </div>
+          </div>
+          <div class="service-card">
+            <h3><span class="service-emoji">💰</span> Sales Pages</h3>
+            <p>Direct purchase pages that convert prospects into customers</p>
+            <div class="pricing-tiers">
+              <div class="pricing-tier"><span class="tier-name">Standard (up to 1,000 words)</span> <span class="tier-price">$2,000</span></div>
+              <div class="pricing-tier"><span class="tier-name">Advanced (up to 2,000 words)</span> <span class="tier-price">$3,000</span></div>
+              <div class="pricing-tier"><span class="tier-name">Premium (3,000+ words)</span> <span class="tier-price">$4,500+</span></div>
+              <div class="pricing-tier"><span class="tier-name">A/B Testing</span> <span class="tier-price">+$1,200</span></div>
+            </div>
+          </div>
+          <div class="service-card">
+            <h3><span class="service-emoji">📧</span> Email Funnels</h3>
+            <p>Automated sequences that nurture leads and drive conversions</p>
+            <div class="pricing-tiers">
+              <div class="pricing-tier"><span class="tier-name">3-5 emails</span> <span class="tier-price">$800</span></div>
+              <div class="pricing-tier"><span class="tier-name">6-8 emails</span> <span class="tier-price">$1,500</span></div>
+              <div class="pricing-tier"><span class="tier-name">9-11+ emails</span> <span class="tier-price">$2,500+</span></div>
+              <div class="pricing-tier"><span class="tier-name">A/B Testing</span> <span class="tier-price">+$700</span></div>
+            </div>
+          </div>
+          <div class="service-card">
+            <h3><span class="service-emoji">📊</span> Case Studies</h3>
+            <p>Marketing assets that showcase your AI solutions' impact</p>
+            <div class="pricing-tiers">
+              <div class="pricing-tier"><span class="tier-name">Basic (up to 400 words)</span> <span class="tier-price">$400</span></div>
+              <div class="pricing-tier"><span class="tier-name">Standard (up to 600 words)</span> <span class="tier-price">$600</span></div>
+              <div class="pricing-tier"><span class="tier-name">Premium (up to 900 words)</span> <span class="tier-price">$900+</span></div>
+              <div class="pricing-tier"><span class="tier-name">A/B Testing</span> <span class="tier-price">+$300</span></div>
+            </div>
+          </div>
+          <div class="service-card">
+            <h3><span class="service-emoji">📝</span> Ad Copy</h3>
+            <p>Individual high-performing ads for Google, Facebook, and LinkedIn</p>
+            <div class="pricing-tiers">
+              <div class="pricing-tier"><span class="tier-name">Facebook Ad (up to 60 words)</span> <span class="tier-price">$80</span></div>
+              <div class="pricing-tier"><span class="tier-name">Google Ad (up to 60 words)</span> <span class="tier-price">$80</span></div>
+              <div class="pricing-tier"><span class="tier-name">LinkedIn Ad (up to 80 words)</span> <span class="tier-price">$100</span></div>
+              <div class="pricing-tier"><span class="tier-name">A/B Testing</span> <span class="tier-price">+$50</span></div>
+            </div>
+          </div>
+          <div class="service-card">
+            <h3><span class="service-emoji">📚</span> Content</h3>
+            <p>Articles and scripts for AI tech companies</p>
+            <div class="pricing-tiers">
+              <div class="pricing-tier"><span class="tier-name">Blog Post (up to 1,500 words)</span> <span class="tier-price">$600</span></div>
+              <div class="pricing-tier"><span class="tier-name">Social Media Post (up to 50 words)</span> <span class="tier-price">$40</span></div>
+              <div class="pricing-tier"><span class="tier-name">Video Script (up to 450 words)</span> <span class="tier-price">$450</span></div>
+              <div class="pricing-tier"><span class="tier-name">A/B Testing</span> <span class="tier-price">+50% of base price</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="info-boxes">
+          <div class="info-box">
+            <h4>⏱️ Delivery Times</h4>
+            <span>5-6 items: 7 days</span>
+            <span>7-8 items: 10 days</span>
+            <span>10-13+ items: 14+ days</span>
+          </div>
+          <div class="info-box">
+            <h4>⚡ Add-ons</h4>
+            <span>Rush Delivery: $500-$2,000</span>
+            <span>Extra Revisions: $300/round</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="portfolio">
+      <div class="container">
+        <div class="section-title">Portfolio Samples</div>
+        <div class="section-subtitle">Spec samples demonstrating AI tech niche expertise</div>
+        <div class="portfolio-grid">
+          <div class="portfolio-item">
+            <div class="portfolio-number">1</div>
+            <h4>Landing Page — AI Customer Support Automation</h4>
+            <p>6-8 sections optimized for demo bookings with placeholder case study (can modify in future)</p>
+            <a href="#" class="view-sample">View Sample →</a>
+          </div>
+          <div class="portfolio-item">
+            <div class="portfolio-number">2</div>
+            <h4>Sales Page — AI Workflow Automation Platform</h4>
+            <p>Premium 4,000+ words designed for direct purchases with placeholder case study (can modify in future)</p>
+            <a href="#" class="view-sample">View Sample →</a>
+          </div>
+          <div class="portfolio-item">
+            <div class="portfolio-number">3</div>
+            <h4>Email Funnel — Trial User Nurture Sequence</h4>
+            <p>6 emails focused on conversion with placeholder case study (can modify in future)</p>
+            <a href="#" class="view-sample">View Sample →</a>
+          </div>
+          <div class="portfolio-item">
+            <div class="portfolio-number">4</div>
+            <h4>Case Study — GrowthScale 52% Cost Reduction</h4>
+            <p>900 words for credibility building with placeholder case study (can modify in future)</p>
+            <a href="#" class="view-sample">View Sample →</a>
+          </div>
+          <div class="portfolio-item">
+            <div class="portfolio-number">5</div>
+            <h4>Facebook Ad — Support Automation</h4>
+            <p>Targeting strategy for signups with placeholder case study (can modify in future)</p>
+            <a href="#" class="view-sample">View Sample →</a>
+          </div>
+          <div class="portfolio-item">
+            <div class="portfolio-number">6</div>
+            <h4>Google Search Ad — AI Customer Service</h4>
+            <p>Keywords &amp; bidding strategy for leads with placeholder case study (can modify in future)</p>
+            <a href="#" class="view-sample">View Sample →</a>
+          </div>
+          <div class="portfolio-item">
+            <div class="portfolio-number">7</div>
+            <h4>LinkedIn Ad — B2B Decision Makers</h4>
+            <p>Executive targeting for demos with placeholder case study (can modify in future)</p>
+            <a href="#" class="view-sample">View Sample →</a>
+          </div>
+          <div class="portfolio-item">
+            <div class="portfolio-number">8</div>
+            <h4>Blog Post — Cut Support Costs 50%</h4>
+            <p>1,485 words SEO-optimized for traffic with placeholder case study (can modify in future)</p>
+            <a href="#" class="view-sample">View Sample →</a>
+          </div>
+          <div class="portfolio-item">
+            <div class="portfolio-number">9</div>
+            <h4>Social Media Post — LinkedIn Thought Leadership</h4>
+            <p>Engagement and authority building with placeholder case study (can modify in future)</p>
+            <a href="#" class="view-sample">View Sample →</a>
+          </div>
+          <div class="portfolio-item">
+            <div class="portfolio-number">10</div>
+            <h4>Video Script — 60-Second Explainer</h4>
+            <p>Production guide for demo video with placeholder case study (can modify in future)</p>
+            <a href="#" class="view-sample">View Sample →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT'S INCLUDED -->
+    <section class="whats-included">
+      <div class="container">
+        <div class="section-title">What's Included</div>
+        <div class="section-subtitle">Every project comes with comprehensive strategy and implementation support</div>
+        <div class="included-grid">
+          <div class="included-item"><div class="included-emoji">✍️</div><h4>Copywriting</h4><p>The actual words that sell</p></div>
+          <div class="included-item"><div class="included-emoji">🧠</div><h4>Strategy Explanation</h4><p>Why it works and psychology</p></div>
+          <div class="included-item"><div class="included-emoji">📋</div><h4>Implementation Guide</h4><p>How to deploy effectively</p></div>
+          <div class="included-item"><div class="included-emoji">🎯</div><h4>Targeting Recommendations</h4><p>Who to reach</p></div>
+          <div class="included-item"><div class="included-emoji">⚡</div><h4>Optimization Tips</h4><p>How to improve</p></div>
+          <div class="included-item"><div class="included-emoji">📊</div><h4>Performance Benchmarks</h4><p>Expected results</p></div>
+        </div>
+        <div class="featured-item">
+          <div class="included-emoji">🔄</div>
+          <h4>2 Revision Rounds</h4>
+          <p>Refine until perfect</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-it-works">
+      <div class="container">
+        <div class="section-title">How It Works</div>
+        <div class="section-subtitle">Simple 3-step process to get your high-converting copy</div>
+        <div class="process-grid">
+          <div class="process-card">
+            <div class="process-number">1</div>
+            <h4>📱 Share Your Requirements via WhatsApp</h4>
+            <p>Product overview, audience, goals, brand guidelines</p>
+          </div>
+          <div class="process-card">
+            <div class="process-number">2</div>
+            <h4>⏱️ Research &amp; Deliver</h4>
+            <p>7-14 days timeline, 50% progress check-in</p>
+          </div>
+          <div class="process-card">
+            <div class="process-number">3</div>
+            <h4>✅ Review &amp; Refine</h4>
+            <p>2 revision rounds, 24-48 hour turnaround</p>
+          </div>
+        </div>
+        <div class="launch-message">🚀 Then you're ready to launch!</div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact">
+      <div class="container">
+        <h2>Ready to Work Together?</h2>
+        <div class="contact-info">
+          <a href="https://wa.me/9288117726" class="whatsapp-link">💬 Message on Business WhatsApp</a>
+          <div class="response-time">Response under 24 hours, Mon-Fri 9AM-6PM IST</div>
+          <div class="target-clients">Best for AI tech companies, SaaS platforms, automation tools, B2B tech solutions targeting international markets</div>
+        </div>
+        <div class="payment-info">
+          <span><strong>Payment:</strong> Wise international payments accepted</span> <br>
+          <span><strong>Terms:</strong> 50% upfront, 50% upon delivery</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+      <div class="container">
+        <div class="section-title">Frequently Asked Questions</div>
+        <div class="section-subtitle">Everything you need to know about working with Growth Campaigns</div>
+        <div class="faq-grid">
+          <div class="faq-item"><div class="faq-icon">💳</div><h4>Payment?</h4><p>50% upfront, 50% delivery for all projects</p></div>
+          <div class="faq-item"><div class="faq-icon">📄</div><h4>Samples?</h4><p>Yes, in Portfolio section</p></div>
+          <div class="faq-item"><div class="faq-icon">🔒</div><h4>NDA/contracts?</h4><p>Yes, both before starting</p></div>
+          <div class="faq-item"><div class="faq-icon">🎨</div><h4>Custom work?</h4><p>Yes, send requirements for quote</p></div>
+          <div class="faq-item"><div class="faq-icon">🌍</div><h4>Payment method?</h4><p>Wise international</p></div>
+          <div class="faq-item"><div class="faq-icon">✏️</div><h4>Extra revisions?</h4><p>$300/round (2 free included)</p></div>
+          <div class="faq-item"><div class="faq-icon">🚀</div><h4>Startups?</h4><p>Yes, both startups and enterprise</p></div>
+          <div class="faq-item"><div class="faq-icon">🌐</div><h4>Timezones?</h4><p>Flexible, respond within 24 hours</p></div>
+          <div class="faq-item"><div class="faq-icon">🎯</div><h4>Brand voice?</h4><p>Yes, match your guidelines</p></div>
+          <div class="faq-item"><div class="faq-icon">🏢</div><h4>Industries?</h4><p>AI tech, SaaS, automation, B2B tech</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <section class="footer">
+      <div class="container">
+        <p>© 2025 Growth Campaigns. All sample work is original and created for demonstration purposes.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
